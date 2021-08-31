@@ -92,6 +92,7 @@ int main(void )
 				 * Initialize the system
 				 */
 
+				XFsbl_Printf(DEBUG_INFO, "Calling XFsbl_Initialize \n\r");
 				FsblStatus = XFsbl_Initialize(&FsblInstance);
 				if (XFSBL_SUCCESS != FsblStatus)
 				{

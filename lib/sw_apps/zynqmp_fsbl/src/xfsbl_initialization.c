@@ -743,6 +743,8 @@ static u32 XFsbl_SystemInit(XFsblPs * FsblInstancePtr)
 
 #ifdef XFSBL_PS_DDR
 #ifdef XPAR_DYNAMIC_DDR_ENABLED
+	XFsbl_Printf(DEBUG_INFO, "Calling XFsbl_DdrInit \n\r");
+
 	/*
 	 * This function is used for all the ZynqMP boards.
 	 * This function initialize the DDR by fetching the SPD data from
@@ -755,6 +757,8 @@ static u32 XFsbl_SystemInit(XFsblPs * FsblInstancePtr)
 		XFsbl_Printf(DEBUG_GENERAL,"XFSBL_DDR_INIT_FAILED\n\r");
 		goto END;
 	}
+#else
+#error "XPAR_DYNAMIC_DDR_ENABLED not defined"
 #endif
 #endif
 
